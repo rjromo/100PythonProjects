@@ -16,8 +16,8 @@ def encrypt (text,shift):
     for number in index_text:
         #This part belows checks if any letter is Z so it starts indexing from beginning 
         if number==len(alphabet)-1:
-            cipher_text.append(alphabet[shift-1])
-        #This part below does the shifting
+            cipher_text.append(alphabet[shift-1]) # -1 because lists start from index 0
+        #This part does the shifting
         else:
             cipher_text.append(alphabet[int(number)+shift])    
     print(f"The encoded text is {''.join(cipher_text)}")
