@@ -21,6 +21,7 @@ while True:
         if letter == guess:
             display[position] = letter
             print(display)
-            
-        else:
-            print(display)    
+
+    """  else:
+            print('Wrong')    
+    """
