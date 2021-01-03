@@ -1,5 +1,8 @@
 # Project for day 7
 import random
+import os
+clear = lambda: os.system('cls')
+
 
 stages = ['''
   +---+
@@ -95,17 +98,21 @@ completedGame = False
 
 while not completedGame:
     guess = str(input('Type any letter: ')).lower()
+    clear()
     
     if guess in display:
         print(f"You have already guessed letter: {guess}")
+        print(stages[lives]) 
     
     for position in range(word_length):
         letter = chosen_word[position]
         if letter == guess:
             display[position] = letter
             print(f"\n{' '.join(display)} \n")
+            print(stages[lives]) 
 
     if guess not in chosen_word:
+        print(f"\n{' '.join(display)} \n")
         print(f"\nYour guess: {guess} is not in the word. You lose a life.")
         lives-=1
         print(stages[lives])    
